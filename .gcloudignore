@@ -1,0 +1,8 @@
+# .gcloudignore
+node_modules/
+.npm/
+.git/
+.github/
+*.log
+dialogflow/
+README.md

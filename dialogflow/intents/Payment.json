@@ -1,0 +1,38 @@
+{
+  "name": "Payment",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "name": "amount",
+          "value": "$amount",
+          "defaultValue": "",
+          "dataType": "@sys.number"
+        },
+        {
+          "name": "recipient",
+          "value": "$recipient",
+          "defaultValue": "",
+          "dataType": "@sys.person"
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Payment of $amount has been made to $recipient"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

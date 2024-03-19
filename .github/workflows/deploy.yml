@@ -1,0 +1,29 @@
+name: Deploy to Google Cloud
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write # Needed to authenticate with GitHub Packages
+      contents: read # Needed to read the contents of the repository
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup Google Cloud SDK
+      uses: google-github-actions/setup-gcloud@main
+      with:
+        project_id: ${{ secrets.GCP_PROJECT_ID }}
+        service_account_key: ${{ secrets.GCP_SA_KEY }}
+        export_default_credentials: true
+
+    - name: Deploy to Google Cloud Functions
+      run: |
+        cd functions
+        gcloud functions deploy cloud-function-deployment-v2 --runtime nodejs18 --region us-central1 --allow-unauthenticated
