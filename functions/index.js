@@ -16,3 +16,11 @@
 // app.intent('Transaction History', transactionHistory);
 
 // exports.dialogflowFirebaseFulfillment = functions.https.onRequest(app);
+
+
+
+exports.dialogflowFirebaseFulfillment = (req, res) =>{ 
+  res.send('Hello World!');
+  console.log(req.body); 
+  console.log('helloo');
+};
