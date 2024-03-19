@@ -31,4 +31,4 @@ jobs:
     - name: Deploy to Google Cloud Functions
       run: |
         cd functions
-        gcloud functions deploy cloud-function-deployment-v2 --runtime nodejs18 --region us-central1 --allow-unauthenticated
+        gcloud functions deploy cloud-function-deployment-v2 --runtime nodejs18 --trigger-http --region us-central1 --allow-unauthenticated
