@@ -13,6 +13,6 @@
   "dependencies": {
     "dialogflow": "^1.2.0",
     "dialogflow-fulfillment": "^0.6.1",
-    "google-cloud/functions-framework": "^1.7.1"
+    "@google-cloud/functions-framework": "^1.7.1"
   }
 }
