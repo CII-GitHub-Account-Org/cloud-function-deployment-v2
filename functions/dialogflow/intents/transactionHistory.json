@@ -1,0 +1,36 @@
+{
+  "name": "projects/project-id/agent/intents/transactionHistory",
+  "displayName": "transactionHistory",
+  "priority": 500000,
+  "webhookState": "WEBHOOK_STATE_ENABLED",
+  "trainingPhrases": [
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "What's my transaction history?"
+        }
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "Show me my recent transactions"
+        }
+      ]
+    }
+  ],
+  "action": "transactionHistory",
+  "messages": [
+    {
+      "text": {
+        "text": [
+          ""
+        ]
+      }
+    }
+  ],
+  "rootFollowupIntentName": "projects/project-id/agent/intents/transactionHistory-followup",
+  "parentFollowupIntentName": "projects/project-id/agent/intents/transactionHistory"
+}

@@ -1,0 +1,64 @@
+{
+  "name": "projects/project-id/agent/intents/payment",
+  "displayName": "payment",
+  "priority": 500000,
+  "webhookState": "WEBHOOK_STATE_ENABLED",
+  "trainingPhrases": [
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "I want to make a payment"
+        }
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "Pay my bills"
+        }
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "Make a payment"
+        }
+      ]
+    }
+  ],
+  "action": "makePayment",
+  "messages": [
+    {
+      "text": {
+        "text": [
+          "Okay, I can help with that. Who do you want to pay?"
+        ]
+      }
+    }
+  ],
+  "parameters": [
+    {
+      "name": "payee",
+      "displayName": "payee",
+      "value": "$payee",
+      "entityTypeDisplayName": "@sys.any",
+      "mandatory": true,
+      "prompts": [
+        "Who do you want to pay?"
+      ]
+    },
+    {
+      "name": "amount",
+      "displayName": "amount",
+      "value": "$amount",
+      "entityTypeDisplayName": "@sys.number",
+      "mandatory": true,
+      "prompts": [
+        "How much do you want to pay?"
+      ]
+    }
+  ]
+}
