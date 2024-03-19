@@ -31,5 +31,5 @@ jobs:
     - name: Deploy to Google Cloud Functions
       run: |
         cd functions
-      # gcloud iam service-accounts add-iam-policy-binding eas-cognitive-cc-gdc1000231537@appspot.gserviceaccount.com --member='serviceAccount:gcp-cloud-function-copilot-v2@eas-cognitive-cc-gdc1000231537.iam.gserviceaccount.com' --role='roles/iam.serviceAccountUser'
+        gcloud iam service-accounts add-iam-policy-binding eas-cognitive-cc-gdc1000231537@appspot.gserviceaccount.com --member='serviceAccount:gcp-cloud-function-copilot-v2@eas-cognitive-cc-gdc1000231537.iam.gserviceaccount.com' --role='roles/iam.serviceAccountUser'
         gcloud functions deploy cloud-function-deployment-v2 --runtime nodejs18 --trigger-http --region us-central1 --allow-unauthenticated
