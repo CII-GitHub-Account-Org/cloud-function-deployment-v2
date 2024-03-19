@@ -19,7 +19,7 @@
 
 
 
-exports.dialogflowFirebaseFulfillment = (req, res) =>{ 
+exports['cloud-function-deployment-v2'] = (req, res) =>{ 
   res.send('Hello World!');
   console.log(req.body); 
   console.log('helloo');
