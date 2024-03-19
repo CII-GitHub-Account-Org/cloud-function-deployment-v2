@@ -1,26 +1,36 @@
 {
-  "name": "TransactionHistory",
-  "auto": true,
-  "contexts": [],
-  "responses": [
+  "name": "projects/project-id/agent/intents/transactionHistory",
+  "displayName": "transactionHistory",
+  "priority": 500000,
+  "webhookState": "WEBHOOK_STATE_ENABLED",
+  "trainingPhrases": [
     {
-      "resetContexts": false,
-      "affectedContexts": [],
-      "parameters": [],
-      "messages": [
+      "type": "EXAMPLE",
+      "parts": [
         {
-          "type": 0,
-          "lang": "en",
-          "speech": "Here is your transaction history: ..."
+          "text": "What's my transaction history?"
         }
-      ],
-      "defaultResponsePlatforms": {},
-      "speech": []
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "Show me my recent transactions"
+        }
+      ]
     }
   ],
-  "priority": 500000,
-  "webhookUsed": true,
-  "webhookForSlotFilling": false,
-  "fallbackIntent": false,
-  "events": []
+  "action": "transactionHistory",
+  "messages": [
+    {
+      "text": {
+        "text": [
+          ""
+        ]
+      }
+    }
+  ],
+  "rootFollowupIntentName": "projects/project-id/agent/intents/transactionHistory-followup",
+  "parentFollowupIntentName": "projects/project-id/agent/intents/transactionHistory"
 }

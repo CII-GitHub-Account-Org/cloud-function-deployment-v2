@@ -1,5 +1,5 @@
 {
-  "name": "my-cloud-function",
+  "name": "my-gcf-dialogflow-project",
   "version": "1.0.0",
   "description": "Google Cloud Function for Dialogflow banking bot",
   "main": "index.js",
@@ -7,12 +7,12 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["dialogflow", "google cloud function", "banking bot"],
+  "keywords": ["dialogflow", "google-cloud-function"],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@google-cloud/functions-framework": "^1.9.0",
     "dialogflow": "^1.2.0",
-    "dialogflow-fulfillment": "^0.6.1"
+    "dialogflow-fulfillment": "^0.6.1",
+    "google-cloud/functions-framework": "^1.7.1"
   }
 }

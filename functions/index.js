@@ -1,23 +1,18 @@
-const accountBalance = require('./AccountBalance');
-const payment = require('./Payment');
-const transactionHistory = require('./TransactionHistory');
+const {dialogflow} = require('actions-on-google');
+const functions = require('firebase-functions');
 
-exports.dialogflowFirebaseFulfillment = function(request, response) {
-    const intent = request.body.queryResult.intent.displayName;
+const app = dialogflow({debug: true});
 
-    switch(intent) {
-        case 'AccountBalance':
-            accountBalance(request, response);
-            break;
-        case 'Payment':
-            payment(request, response);
-            break;
-        case 'TransactionHistory':
-            transactionHistory(request, response);
-            break;
-        default:
-            response.send({
-                fulfillmentText: 'No intent matched.'
-            });
-    }
-};
+// Import intent handlers
+const {cardActivation} = require('./dialogflow/intents/cardActivation');
+const {accountBalance} = require('./dialogflow/intents/accountBalance');
+const {payment} = require('./dialogflow/intents/payment');
+const {transactionHistory} = require('./dialogflow/intents/transactionHistory');
+
+// Map intents to handlers
+app.intent('Card Activation', cardActivation);
+app.intent('Account Balance', accountBalance);
+app.intent('Payment', payment);
+app.intent('Transaction History', transactionHistory);
+
+exports.dialogflowFirebaseFulfillment = functions.https.onRequest(app);

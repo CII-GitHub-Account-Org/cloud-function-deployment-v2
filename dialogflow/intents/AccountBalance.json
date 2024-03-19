@@ -1,26 +1,37 @@
 {
-  "name": "AccountBalance",
-  "auto": true,
-  "contexts": [],
-  "responses": [
+  "name": "projects/project-id/agent/intents/accountBalance",
+  "displayName": "accountBalance",
+  "priority": 500000,
+  "webhookState": "WEBHOOK_STATE_ENABLED",
+  "trainingPhrases": [
     {
-      "resetContexts": false,
-      "affectedContexts": [],
-      "parameters": [],
-      "messages": [
+      "type": "EXAMPLE",
+      "parts": [
         {
-          "type": 0,
-          "lang": "en",
-          "speech": "Your account balance is $X"
+          "text": "What's my account balance?"
         }
-      ],
-      "defaultResponsePlatforms": {},
-      "speech": []
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "Can you tell me my account balance?"
+        }
+      ]
     }
   ],
-  "priority": 500000,
-  "webhookUsed": true,
-  "webhookForSlotFilling": false,
-  "fallbackIntent": false,
-  "events": []
+  "action": "account.balance",
+  "messages": [
+    {
+      "text": {
+        "text": [
+          "Your account balance is $X."
+        ]
+      }
+    }
+  ],
+  "parameters": [],
+  "rootFollowupIntentName": "projects/project-id/agent/intents/accountBalance-followup",
+  "parentFollowupIntentName": "projects/project-id/agent/intents/accountBalance"
 }

@@ -1,38 +1,64 @@
 {
-  "name": "Payment",
-  "auto": true,
-  "contexts": [],
-  "responses": [
+  "name": "projects/project-id/agent/intents/payment",
+  "displayName": "payment",
+  "priority": 500000,
+  "webhookState": "WEBHOOK_STATE_ENABLED",
+  "trainingPhrases": [
     {
-      "resetContexts": false,
-      "affectedContexts": [],
-      "parameters": [
+      "type": "EXAMPLE",
+      "parts": [
         {
-          "name": "amount",
-          "value": "$amount",
-          "defaultValue": "",
-          "dataType": "@sys.number"
-        },
-        {
-          "name": "recipient",
-          "value": "$recipient",
-          "defaultValue": "",
-          "dataType": "@sys.person"
+          "text": "I want to make a payment"
         }
-      ],
-      "messages": [
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [
         {
-          "type": 0,
-          "speech": "Payment of $amount has been made to $recipient"
+          "text": "Pay my bills"
         }
-      ],
-      "defaultResponsePlatforms": {},
-      "speech": []
+      ]
+    },
+    {
+      "type": "EXAMPLE",
+      "parts": [
+        {
+          "text": "Make a payment"
+        }
+      ]
     }
   ],
-  "priority": 500000,
-  "webhookUsed": true,
-  "webhookForSlotFilling": false,
-  "fallbackIntent": false,
-  "events": []
+  "action": "makePayment",
+  "messages": [
+    {
+      "text": {
+        "text": [
+          "Okay, I can help with that. Who do you want to pay?"
+        ]
+      }
+    }
+  ],
+  "parameters": [
+    {
+      "name": "payee",
+      "displayName": "payee",
+      "value": "$payee",
+      "entityTypeDisplayName": "@sys.any",
+      "mandatory": true,
+      "prompts": [
+        "Who do you want to pay?"
+      ]
+    },
+    {
+      "name": "amount",
+      "displayName": "amount",
+      "value": "$amount",
+      "entityTypeDisplayName": "@sys.number",
+      "mandatory": true,
+      "prompts": [
+        "How much do you want to pay?"
+      ]
+    }
+  ]
 }
