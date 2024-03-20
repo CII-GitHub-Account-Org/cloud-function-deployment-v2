@@ -1,6 +1,5 @@
 const {dialogflow} = require('actions-on-google');
 const functions = require('firebase-functions');
-const {dialogflowFulfillment} = require('./dialogflow/fulfillment/index.js');
 
 const app = dialogflow({debug: true});
 
@@ -15,8 +14,5 @@ app.intent('Card Activation', cardActivation);
 app.intent('Account Balance', accountBalance);
 app.intent('Payment', payment);
 app.intent('Transaction History', transactionHistory);
-
-// Use dialogflowFulfillment
-dialogflowFulfillment(app);
 
 exports['cloud-function-deployment-v2'] = functions.https.onRequest(app);
