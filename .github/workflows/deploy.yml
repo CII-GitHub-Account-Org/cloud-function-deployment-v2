@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v2 # Checkout the code from the repository
 
     - name: Setup Google Cloud SDK
       uses: google-github-actions/setup-gcloud@main
