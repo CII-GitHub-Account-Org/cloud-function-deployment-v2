@@ -17,7 +17,7 @@ jobs:
       uses: actions/checkout@v2 # Checkout the code from the repository
 
     - name: Setup Google Cloud SDK # Install the Google Cloud SDK
-      uses: google-github-actions/setup-gcloud@main
+      uses: google-github-actions/setup-gcloud@main # Install the Google Cloud SDK
       with:
         project_id: ${{ secrets.GCP_PROJECT_ID }}
         service_account_key: ${{ secrets.GCP_SA_KEY }}
