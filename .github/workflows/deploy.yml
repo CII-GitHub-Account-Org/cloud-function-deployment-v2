@@ -3,7 +3,7 @@ name: Deploy to Google Cloud
 on:
   push:
     branches:
-      - main # Set the branch to deploy to
+      - main
 
 jobs:
   deploy:
@@ -14,9 +14,9 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2 # Checkout the code from the repository
+      uses: actions/checkout@v2
 
-    - name: Setup Google Cloud SDK # Install the Google Cloud SDK
+    - name: Setup Google Cloud SDK
       uses: google-github-actions/setup-gcloud@main # Install the Google Cloud SDK
       with:
         project_id: ${{ secrets.GCP_PROJECT_ID }} # The GCP project ID
