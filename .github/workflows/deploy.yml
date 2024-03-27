@@ -28,7 +28,7 @@ jobs:
       with:
         credentials_json: ${{ secrets.GCP_SA_KEY }} # The GCP service account key
 
-    - name: Deploy to Google Cloud Functions
+    - name: Deploy to Google Cloud Functions # Deploy the Cloud Function
       run: |
         cd functions
         gcloud iam service-accounts add-iam-policy-binding eas-cognitive-cc-gdc1000231537@appspot.gserviceaccount.com --member='serviceAccount:gcp-cloud-function-copilot-v2@eas-cognitive-cc-gdc1000231537.iam.gserviceaccount.com' --role='roles/iam.serviceAccountUser'
