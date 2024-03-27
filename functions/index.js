@@ -1,7 +1,7 @@
 const {dialogflow} = require('actions-on-google');
 const functions = require('firebase-functions');
 
-const app = dialogflow({debug: true});
+const app = dialogflow({debug: true}); 
 
 // Import intent handlers
 const {cardActivation} = require('./dialogflow/intents/cardActivation');
